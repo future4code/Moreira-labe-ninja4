@@ -61,7 +61,15 @@ export default class PagCadastro extends React.Component{
         }
 
         Axios.post(baseURL+"jobs", body, headersAPI)
-        .then((res) => alert("job criado"))
+        .then((res) => {
+            alert("Serviço adicionado com sucesso")
+            this.setState({
+                title: "",
+        description: "",
+        price: "",
+        paymentMethods: [],
+        dueDate: "",
+            })})
         .catch((err) => console.log(err.response.data))
     }
 
