@@ -18,29 +18,7 @@ export default class SessaoProd extends React.Component {
 
     state = {
       jobs: [],
-      cart: [{
-        "id": "1d3957ce-b0dd-45e5-b2c2-2986f9f89bfe",
-        "title": "Teste",
-        "description": "Teste",
-        "price": 10,
-        "paymentMethods": [
-            "Dinheiro"
-        ],
-        "dueDate": "2022-02-27T00:00:00.000Z",
-        "taken": false
-    },
-    {
-        "id": "6750634a-2250-49b0-b336-d3ad0954111f",
-        "title": "Teste 2",
-        "description": "Teste 2",
-        "price": 123,
-        "paymentMethods": [
-            "Troca"
-        ],
-        "dueDate": "2022-02-17T00:00:00.000Z",
-        "taken": false
-    }
-]
+      cart: [],
     }
 
     getJobs = () => {
@@ -49,9 +27,16 @@ export default class SessaoProd extends React.Component {
         .catch((err) => console.log(err.response))
     }
 
-    addToCart = () => {
+    addToCart = (e) => {
+      const jobId = e.target.value
+      const newCart = this.state.jobs.filter((job) => {
+        return jobId === job.id
+      }).map((job) => {return job})
 
+      this.setState({cart: [...this.state.cart, newCart]})
+      console.log(this.state.cart)
     }
+    
     render() {
 
       let allJobs
@@ -65,7 +50,8 @@ export default class SessaoProd extends React.Component {
           cardPrice={job.price} 
           cardPayMeth={job.paymentMethods} 
           cardDueDate={job.dueDate}
-          addToCart={this.addToCart}/>
+          addToCart={this.addToCart}
+          value={job.id}/>
         })
       }
 
