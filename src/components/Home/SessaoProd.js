@@ -32,7 +32,7 @@ export default class SessaoProd extends React.Component {
       const addJob = this.state.jobs.find((job) => jobId === job.id);
       const newCart = [...this.state.cart, addJob]
 
-      this.setState({cart: newCart}) 
+      this.setState({cart: newCart})
     }
     
     render() {
