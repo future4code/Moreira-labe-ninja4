@@ -3,11 +3,7 @@ import styled from "styled-components";
 import Axios from "axios";
 import { CardProd } from "./CardProd";
 import { baseURL, headersAPI } from "../../services/urls";
-<<<<<<< HEAD
-import Filtros from "./Filtros";
-=======
 import Carrinho from "./Carrinho";
->>>>>>> master
 
 const SessionContainer = styled.div`
   display: flex;
@@ -66,12 +62,8 @@ export default class SessaoProd extends React.Component {
       }
       
       return <SessionContainer>
-<<<<<<< HEAD
-              <Filtros jobCard={this.state.jobs}/>          
-=======
             <Carrinho cart={this.state.cart}/>
 
->>>>>>> master
             {allJobs}
         </SessionContainer>
     }
