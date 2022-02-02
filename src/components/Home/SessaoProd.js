@@ -3,7 +3,11 @@ import styled from "styled-components";
 import Axios from "axios";
 import { CardProd } from "./CardProd";
 import { baseURL, headersAPI } from "../../services/urls";
+<<<<<<< HEAD
 import Filtros from "./Filtros";
+=======
+import Carrinho from "./Carrinho";
+>>>>>>> master
 
 const SessionContainer = styled.div`
   display: flex;
@@ -19,6 +23,7 @@ export default class SessaoProd extends React.Component {
 
     state = {
       jobs: [],
+      cart: [],
     }
 
     getJobs = () => {
@@ -32,9 +37,15 @@ export default class SessaoProd extends React.Component {
         .catch((err) => console.log(err.response))
     }
 
-    addToCart = () => {
+    addToCart = (e) => {
 
+      const jobId = e.target.value
+      const addJob = this.state.jobs.find((job) => jobId === job.id);
+      const newCart = [...this.state.cart, addJob]
+
+      this.setState({cart: newCart}) 
     }
+    
     render() {
 
       let allJobs
@@ -48,13 +59,19 @@ export default class SessaoProd extends React.Component {
           cardPrice={job.price} 
           cardPayMeth={job.paymentMethods} 
           cardDueDate={job.dueDate}
-          addToCart={this.addToCart}/>
+          addToCart={this.addToCart}
+          value={job.id}/>
         })
         
       }
       
       return <SessionContainer>
+<<<<<<< HEAD
               <Filtros jobCard={this.state.jobs}/>          
+=======
+            <Carrinho cart={this.state.cart}/>
+
+>>>>>>> master
             {allJobs}
         </SessionContainer>
     }
