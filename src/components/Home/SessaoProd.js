@@ -17,6 +17,7 @@ export default class SessaoProd extends React.Component {
 
     state = {
       jobs: [],
+      cart: [],
     }
 
     getJobs = () => {
@@ -25,9 +26,16 @@ export default class SessaoProd extends React.Component {
         .catch((err) => console.log(err.response))
     }
 
-    addToCart = () => {
+    addToCart = (e) => {
+      const jobId = e.target.value
+      const newCart = this.state.jobs.filter((job) => {
+        return jobId === job.id
+      }).map((job) => {return job})
 
+      this.setState({cart: [...this.state.cart, newCart]})
+      console.log(this.state.cart)
     }
+    
     render() {
 
       let allJobs
@@ -41,7 +49,8 @@ export default class SessaoProd extends React.Component {
           cardPrice={job.price} 
           cardPayMeth={job.paymentMethods} 
           cardDueDate={job.dueDate}
-          addToCart={this.addToCart}/>
+          addToCart={this.addToCart}
+          value={job.id}/>
         })
       }
 

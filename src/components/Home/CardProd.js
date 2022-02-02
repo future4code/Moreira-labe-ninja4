@@ -13,20 +13,36 @@ const CardContainer = styled.div`
     :hover {
         box-shadow: 0 4px 4px gray;
     }
+    .title{
+        margin: 10px 5px 3px 10px;
+        font-size: larger;
+        font-weight: bolder;
+    }
+    .description{
+        font-size: medium;
+        font-weight: bold;
+        color: gray;
+        margin: 0 10px;
+    }
+    .price{
+        font-size: large;
+        font-weight: bold;
+        margin: 10px;
+    }
 `
 
 export function CardProd(props) {
             return <CardContainer>
-            <p>Título: <br/> {props.cardTitle}</p>
+            <p className="title">{props.cardTitle}</p>
 
-            <p>Descrição: <br/> {props.cardDescription}</p>
+            <p className="description">{props.cardDescription}</p>
 
-            <p>Preço: <br/> R$ {props.cardPrice}</p>
+            <p className="price">R$ {props.cardPrice}</p>
 
             <p>Forma de Pagamento: <br/> {props.cardPayMeth}</p>
 
             <p>Data limite: <br/> {props.cardDueDate}</p>
 
-            <button onClick={props.addToCart}>Adicionar ao carrinho</button>
+            <button value={props.value} onClick={props.addToCart}>Adicionar ao carrinho</button>
         </CardContainer>
     }
