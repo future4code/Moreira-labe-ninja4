@@ -3,11 +3,13 @@ import styled from "styled-components";
 import Axios from "axios";
 import { CardProd } from "./CardProd";
 import { baseURL, headersAPI } from "../../services/urls";
+import Filtros from "./Filtros";
 
 const SessionContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
 `
+
 
 export default class SessaoProd extends React.Component {
 
@@ -21,7 +23,12 @@ export default class SessaoProd extends React.Component {
 
     getJobs = () => {
         Axios.get(baseURL+"jobs", headersAPI)
-        .then((res) => {this.setState(res.data)})
+        .then((res) => {this.setState({
+          jobs: res.data.jobs
+        })
+        
+      })
+
         .catch((err) => console.log(err.response))
     }
 
@@ -43,9 +50,11 @@ export default class SessaoProd extends React.Component {
           cardDueDate={job.dueDate}
           addToCart={this.addToCart}/>
         })
+        
       }
-
+      
       return <SessionContainer>
+              <Filtros jobCard={this.state.jobs}/>          
             {allJobs}
         </SessionContainer>
     }

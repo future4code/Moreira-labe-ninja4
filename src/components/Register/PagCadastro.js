@@ -65,10 +65,10 @@ export default class PagCadastro extends React.Component{
             alert("Serviço adicionado com sucesso")
             this.setState({
                 title: "",
-        description: "",
-        price: "",
-        paymentMethods: [],
-        dueDate: "",
+                description: "",
+                price: "",
+                paymentMethods: [],
+                dueDate: "",
             })})
         .catch((err) => console.log(err.response.data))
     }
