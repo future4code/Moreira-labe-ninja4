@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import SessaoProd from './Home/SessaoProd'
 import PagCadastro from './Register/PagCadastro'
+import Header from './Home/Header'
+import Footer from './Home/Footer'
 
 export class AppContainer extends Component {
 
@@ -32,8 +34,10 @@ export class AppContainer extends Component {
 
     return (
       <div>
+        <Header />
         <button onClick={this.changeSection}>{this.state.button}</button>
         {displaySection}
+        <Footer/>
       </div>
     )
   }
