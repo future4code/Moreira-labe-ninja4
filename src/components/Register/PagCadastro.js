@@ -61,7 +61,15 @@ export default class PagCadastro extends React.Component{
         }
 
         Axios.post(baseURL+"jobs", body, headersAPI)
-        .then((res) => alert("job criado"))
+        .then((res) => {
+            alert("Serviço adicionado com sucesso")
+            this.setState({
+                title: "",
+        description: "",
+        price: "",
+        paymentMethods: [],
+        dueDate: "",
+            })})
         .catch((err) => console.log(err.response.data))
     }
 
@@ -95,10 +103,10 @@ export default class PagCadastro extends React.Component{
             <div
                 onChange={this.onChangePayment}>
 
-                    <input type="radio" value="Pix" name="payment"/> Pix
-                    <input type="radio" value="Cartão" name="payment"/>Cartão
-                    <input type="radio" value="Dinheiro" name="payment"/>Dinheiro
-                    <input type="radio" value="Troca" name="payment"/>Troca
+                    <input type="checkbox" value="Pix" name="payment"/> Pix
+                    <input type="checkbox" value="Cartão" name="payment"/>Cartão
+                    <input type="checkbox" value="Dinheiro" name="payment"/>Dinheiro
+                    <input type="checkbox" value="Troca" name="payment"/>Troca
 
             </div>
 
