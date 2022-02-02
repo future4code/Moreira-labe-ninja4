@@ -6,7 +6,7 @@ class Carrinho extends React.Component{
     render (){
         return(
             <div>
-                <p>Carrinho!</p>
+               
             </div>
         )
         
