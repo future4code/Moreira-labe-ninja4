@@ -3,6 +3,7 @@ import SessaoProd from './Home/SessaoProd'
 import PagCadastro from './Register/PagCadastro'
 import Header from './Home/Header'
 import Footer from './Home/Footer'
+import { IconName } from "react-icons/fa";
 
 export class AppContainer extends Component {
 

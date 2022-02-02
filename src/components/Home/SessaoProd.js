@@ -18,6 +18,29 @@ export default class SessaoProd extends React.Component {
 
     state = {
       jobs: [],
+      cart: [{
+        "id": "1d3957ce-b0dd-45e5-b2c2-2986f9f89bfe",
+        "title": "Teste",
+        "description": "Teste",
+        "price": 10,
+        "paymentMethods": [
+            "Dinheiro"
+        ],
+        "dueDate": "2022-02-27T00:00:00.000Z",
+        "taken": false
+    },
+    {
+        "id": "6750634a-2250-49b0-b336-d3ad0954111f",
+        "title": "Teste 2",
+        "description": "Teste 2",
+        "price": 123,
+        "paymentMethods": [
+            "Troca"
+        ],
+        "dueDate": "2022-02-17T00:00:00.000Z",
+        "taken": false
+    }
+]
     }
 
     getJobs = () => {
@@ -47,7 +70,8 @@ export default class SessaoProd extends React.Component {
       }
 
       return <SessionContainer>
-            <Carrinho/>
+            <Carrinho cart={this.state.cart}/>
+
             {allJobs}
         </SessionContainer>
     }
