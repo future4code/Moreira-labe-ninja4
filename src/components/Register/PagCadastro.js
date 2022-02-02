@@ -103,10 +103,10 @@ export default class PagCadastro extends React.Component{
             <div
                 onChange={this.onChangePayment}>
 
-                    <input type="radio" value="Pix" name="payment"/> Pix
-                    <input type="radio" value="Cartão" name="payment"/>Cartão
-                    <input type="radio" value="Dinheiro" name="payment"/>Dinheiro
-                    <input type="radio" value="Troca" name="payment"/>Troca
+                    <input type="checkbox" value="Pix" name="payment"/> Pix
+                    <input type="checkbox" value="Cartão" name="payment"/>Cartão
+                    <input type="checkbox" value="Dinheiro" name="payment"/>Dinheiro
+                    <input type="checkbox" value="Troca" name="payment"/>Troca
 
             </div>
 
