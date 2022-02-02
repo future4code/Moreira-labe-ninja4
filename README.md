@@ -18,7 +18,7 @@
 
 <p>Dividindo a criação dos componentes entre os menbros da equipe. Usando a ferramenta "Trello".</p>
 
-<h3>CONSTRUINDO WIREFRIME</h3>
+<h3>CONSTRUINDO WIREFRAME</h3>
 
 <p>https://www.figma.com/proto/ARzmdf1iOYFEgd7XHLaACq/Untitled?node-id=2%3A5&scaling=scale-down&page-id=0%3A1</p>
 
