@@ -2,12 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 class Carrinho extends React.Component{
-    state = {
-        carrinho: this.props.cart
-    }
+    
 
     valorTotal = () => {
-        const valorTotal = this.state.carrinho.map((job) => {
+        const valorTotal = this.props.cart.map((job) => {
             return job.price
         }).reduce((a, b) => a + b, 0)
             return(valorTotal)
@@ -16,7 +14,7 @@ class Carrinho extends React.Component{
 
     removeCarrinho = (ev) => {
         const idJob = ev.target.value
-        const novoCarrinho = this.state.carrinho.filter((job) => {
+        const novoCarrinho = this.props.cart.filter((job) => {
             return job.id !== idJob
         }).map((job) => {
             return job
@@ -28,8 +26,8 @@ class Carrinho extends React.Component{
     render (){
         let produtosCarrinhos
 
-        if (this.state.carrinho !== []){
-            produtosCarrinhos = this.state.carrinho.map((job) => {
+        if (this.props.cart !== []){
+            produtosCarrinhos = this.props.cart.map((job) => {
                 return <div value={job.id}>
                 <p>{job.title}</p>
                 <p>R$ {job.price}</p>
