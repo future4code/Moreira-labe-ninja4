@@ -27,13 +27,12 @@ export default class SessaoProd extends React.Component {
     }
 
     addToCart = (e) => {
-      const jobId = e.target.value
-      const newCart = this.state.jobs.filter((job) => {
-        return jobId === job.id
-      }).map((job) => {return job})
 
-      this.setState({cart: [...this.state.cart, newCart]})
-      console.log(this.state.cart)
+      const jobId = e.target.value
+      const addJob = this.state.jobs.find((job) => jobId === job.id);
+      const newCart = [...this.state.cart, addJob]
+
+      this.setState({cart: newCart})
     }
     
     render() {
