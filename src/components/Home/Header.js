@@ -1,5 +1,5 @@
 import React from "react";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaOpencart } from "react-icons/fa";
 import styled from "styled-components";
 
 const Fig = {
@@ -36,10 +36,10 @@ class Header extends React.Component{
         return(
             <Content>
                 <div>
-                    <H1>Ninjas ♥</H1>
+                    <H1><FaOpencart/> Ninjas </H1>
                 </div>
                 <div>
-                    <Button>Seja um ninja!</Button>
+                    <Button>Procurar ninja!</Button>
                 </div>
                 <div>
                     <Button>Entrar</Button>
