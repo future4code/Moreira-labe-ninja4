@@ -63,9 +63,10 @@ export default class SessaoProd extends React.Component {
     state = {
       jobs: [],
       cart: [],
-      valorMinimo: '',
-      valorMaximo: '',
-      buscar: ''
+      valorMinimo: "",
+      valorMaximo: "",
+      buscar: '',
+      order: "title",
     }
 
     getJobs = () => {
@@ -88,6 +89,16 @@ export default class SessaoProd extends React.Component {
       this.setState({cart: newCart}) 
     }
 
+    removeCarrinho = (ev) => {
+      const idJob = ev.target.value
+      const novoCarrinho = this.state.cart.filter((job) => {
+          return job.id !== idJob
+      }).map((job) => {
+          return job
+      })
+      this.setState({cart: novoCarrinho})
+  }
+
     //A partir daqui: Arthur
     onChangeMinimo = (event) =>{
       this.setState({
@@ -104,13 +115,38 @@ export default class SessaoProd extends React.Component {
           buscar: event.target.value
       })
     }
+    onChangeOrder = (e) => {
+      this.setState({
+        order: e.target.value
+    })}
     
     render() {
       
       let allJobs
 
       if (this.state.jobs !== []){
-        allJobs = this.state.jobs.map((job) => {
+        allJobs = this.state.jobs
+        .filter((job) => {
+          return job.title.toLowerCase().includes(this.state.buscar.toLowerCase())
+          })
+          .filter((job) => {
+          return this.state.valorMinimo === "" || job.price >= Number(this.state.valorMinimo)
+        })
+        .filter((job) => {
+          return this.state.valorMaximo === "" || job.price <= Number(this.state.valorMaximo)
+        })
+        .sort((a, b) => {
+            switch (this.state.order) {
+              case "price":
+                return a.price - b.price
+
+              case "title":
+                return a.title.localeCompare(b.title)
+
+              case "dueDate":
+                return new Date(a.dueDate).getTime() < new Date(b.dueDate).getTime()
+            }})
+        .map((job) => {
           return <CardProd 
           key={job.id}
           cardTitle={job.title} 
@@ -121,7 +157,6 @@ export default class SessaoProd extends React.Component {
           addToCart={this.addToCart}
           value={job.id}/>
         })
-        
       }
       return (
         <SessionContainer>
@@ -143,8 +178,10 @@ export default class SessaoProd extends React.Component {
                         <option value="">Prazo</option>
                     </Select>
                 </Box>
-            <Carrinho cart={this.state.cart}/>
+            <Carrinho remove={this.removeCarrinho} cart={this.state.cart}/>
+
             {allJobs}
+
         </SessionContainer>
       )
     }

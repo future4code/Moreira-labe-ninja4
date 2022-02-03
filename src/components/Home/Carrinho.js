@@ -12,16 +12,7 @@ class Carrinho extends React.Component{
 
     } 
 
-    removeCarrinho = (ev) => {
-        const idJob = ev.target.value
-        const novoCarrinho = this.props.cart.filter((job) => {
-            return job.id !== idJob
-        }).map((job) => {
-            return job
-        })
-        this.setState({carrinho: novoCarrinho})
-        console.log(ev.target.value)
-    }
+
 
     render (){
         let produtosCarrinhos
@@ -33,7 +24,7 @@ class Carrinho extends React.Component{
                 <p>R$ {job.price}</p>
                 <button 
                 value={job.id}
-                onClick={this.removeCarrinho}> Remover</button>
+                onClick={this.props.remove}> Remover</button>
             </div>
             })}
         return(
