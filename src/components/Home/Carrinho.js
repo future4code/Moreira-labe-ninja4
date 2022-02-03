@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 
 class Carrinho extends React.Component{
     
@@ -9,17 +8,14 @@ class Carrinho extends React.Component{
             return job.price
         }).reduce((a, b) => a + b, 0)
             return(valorTotal)
-
     } 
-
-
 
     render (){
         let produtosCarrinhos
 
         if (this.props.cart !== []){
             produtosCarrinhos = this.props.cart.map((job) => {
-                return <div value={job.id}>
+                return <div key={job.id} value={job.id}>
                 <p>{job.title}</p>
                 <p>R$ {job.price}</p>
                 <button 
@@ -34,14 +30,7 @@ class Carrinho extends React.Component{
                 <p>Valor Total: {this.valorTotal()}</p>
             </div>
         )
-        
-        
     }
-
-
-
-
-
 }
 
 

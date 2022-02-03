@@ -7,10 +7,16 @@ import Carrinho from "./Carrinho";
 import Ninja from '../../assets/ninja.jpg'
 
 const SessionContainer = styled.div`
-  //display: flex;
-  //flex-wrap: wrap;
-  //background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
+
+const CardsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+`
+
 const Box = styled.div`
   border: 1px solid black;
   width: 90vw;
@@ -102,12 +108,12 @@ export default class SessaoProd extends React.Component {
     //A partir daqui: Arthur
     onChangeMinimo = (event) =>{
       this.setState({
-          valorMinimo: event.target.value
+          valorMinimo: event.target.value.replace(/\D/,'')
       })
     }
     onChangeMaximo = (event) =>{
       this.setState({
-          valorMaximo: event.target.value
+          valorMaximo: event.target.value.replace(/\D/,'')
       })
     }
     onChangebuscar = (event) =>{
@@ -145,6 +151,8 @@ export default class SessaoProd extends React.Component {
 
               case "dueDate":
                 return new Date(a.dueDate).getTime() < new Date(b.dueDate).getTime()
+              default:
+                return a.price - b.price
             }})
         .map((job) => {
           return <CardProd 
@@ -169,18 +177,22 @@ export default class SessaoProd extends React.Component {
                   <H2>Quero um super ninja!</H2>
                 </div>
                 <Box>
-                    <Input type="number" placeholder="Valor mínimo" onChange={this.onChangeMinimo} value={this.state.valorMinimo}/>
-                    <Input type="number" placeholder="Valor máximo" onChange={this.onChangeMaximo} value={this.state.valorMaximo}/>
+                    <Input type="text" placeholder="Valor mínimo" onChange={this.onChangeMinimo} value={this.state.valorMinimo}/>
+                    <Input type="text" placeholder="Valor máximo" onChange={this.onChangeMaximo} value={this.state.valorMaximo}/>
                     <Input type="text" placeholder="Buscar" onChange={this.onChangebuscar} value={this.state.buscar}/>
-                    <Select name="" id="">
-                        <option value="">Titulo</option>
-                        <option value="">Valor</option>
-                        <option value="">Prazo</option>
+                    <Select name="order" onChange={this.onChangeOrder}>
+                        <option value="title">Titulo</option>
+                        <option value="price">Valor</option>
+                        <option value="dueDate">Prazo</option>
                     </Select>
                 </Box>
             <Carrinho remove={this.removeCarrinho} cart={this.state.cart}/>
 
-            {allJobs}
+            <CardsContainer>
+
+             {allJobs}
+
+            </CardsContainer>
 
         </SessionContainer>
       )

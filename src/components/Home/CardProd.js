@@ -39,7 +39,7 @@ export function CardProd(props) {
 
             <p className="price">R$ {props.cardPrice}</p>
 
-            <p>Forma de Pagamento: <br/> {props.cardPayMeth}</p>
+            <p className="paymentMethod">Forma de Pagamento: <br/> {props.cardPayMeth}</p>
 
             <p>Data limite: <br/> {props.cardDueDate}</p>
 
