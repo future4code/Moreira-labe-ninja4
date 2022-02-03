@@ -3,7 +3,6 @@ import SessaoProd from './Home/SessaoProd'
 import PagCadastro from './Register/PagCadastro'
 import Header from './Home/Header'
 import Footer from './Home/Footer'
-import { IconName } from "react-icons/fa";
 
 export class AppContainer extends Component {
 
@@ -35,8 +34,7 @@ export class AppContainer extends Component {
 
     return (
       <div>
-        <Header clicks={this.changeSection} />
-        {/* <button onClick={this.changeSection}>{this.state.button}</button> */}
+        <Header buttonText={this.state.button} clicks={this.changeSection} />
         {displaySection}
         <Footer/>
       </div>

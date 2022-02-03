@@ -39,7 +39,7 @@ class Header extends React.Component{
                     <H1><FaOpencart/> Ninjas </H1>
                 </div>
                 <div>
-                    <Button onClick={this.props.clicks}>Procurar ninja!</Button>
+                    <Button onClick={this.props.clicks}>{this.props.buttonText}</Button>
                 </div>
                 <div>
                     <Button>Entrar</Button>
