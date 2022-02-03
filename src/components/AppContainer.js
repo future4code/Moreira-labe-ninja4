@@ -35,8 +35,8 @@ export class AppContainer extends Component {
 
     return (
       <div>
-        <Header />
-        <button onClick={this.changeSection}>{this.state.button}</button>
+        <Header clicks={this.changeSection} />
+        {/* <button onClick={this.changeSection}>{this.state.button}</button> */}
         {displaySection}
         <Footer/>
       </div>
