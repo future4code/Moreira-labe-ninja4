@@ -3,7 +3,7 @@ import React from "react";
 
 class Filtros extends React.Component{
 
-    state = {
+    /* state = {
         valorMinimo: '',
         valorMaximo: '',
         buscar: ''
@@ -23,17 +23,13 @@ class Filtros extends React.Component{
         this.setState({
             buscar: event.target.value
         })
-    }
+    } */
 
     render(){
         
-        console.log("VALOR MINIMO:",this.state.valorMinimo, "VALOR MAXIMO", this.state.valorMaximo, "BUSCAR:", this.state.buscar)
-        
-        
-
         return(
             <>
-                <div>
+               {/*  <div>
                     <input type="number" placeholder="Valor mínimo" onChange={this.onChangeMinimo} value={this.state.valorMinimo}/>
                     <input type="number" placeholder="Valor máximo" onChange={this.onChangeMaximo} value={this.state.valorMaximo}/>
                     <input type="text" placeholder="Buscar" onChange={this.onChangebuscar} value={this.state.buscar}/>
@@ -42,7 +38,7 @@ class Filtros extends React.Component{
                         <option value="">Valor</option>
                         <option value="">Prazo</option>
                     </select>
-                </div>
+                </div> */}
                 
             </>
         )

@@ -45,4 +45,4 @@ export function CardProd(props) {
 
             <button value={props.value} onClick={props.addToCart}>Adicionar ao carrinho</button>
         </CardContainer>
-    }
+}
