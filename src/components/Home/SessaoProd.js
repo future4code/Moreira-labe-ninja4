@@ -93,10 +93,6 @@ const BoxDesc = styled.div`
 `
 export default class SessaoProd extends React.Component {
 
-  componentDidMount(){
-    this.getJobs()
-  }
-
     state = {
       jobs: [],
       cart: [],
@@ -106,6 +102,20 @@ export default class SessaoProd extends React.Component {
       order: "title",
       showCart: false
     }
+
+    componentDidMount(){
+      this.getJobs()
+      // this.getCart()
+    }
+  
+    // componentDidUpdate(){
+    //   localStorage.setItem('cart', JSON.stringify(this.state.cart))
+    // }
+  
+    // getCart = () => {
+    //   this.setState({
+    //     cart: JSON.parse(localStorage.getItem("cart"))})
+    // }
 
     getJobs = () => {
         Axios.get(baseURL+"jobs", headersAPI)

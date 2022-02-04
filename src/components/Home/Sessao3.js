@@ -8,6 +8,11 @@ const BoaContainer = styled.section`
     margin: 50px 0px;
     color: white;
     letter-spacing: 2px;
+    @media screen and (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 `
 const Title = styled.section`
     text-align: center;
@@ -24,9 +29,17 @@ const SectionOne = styled.section`
 const SectionTwo = styled.section`
     display: flex;
     justify-content: space-around;
+    @media screen and (max-width: 800px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 `    
 const Box = styled.article`
-    width: 400px;
+    width: 25%;
+    @media screen and (max-width: 800px) {
+        width: 80%;
+    }
 `
 
 
