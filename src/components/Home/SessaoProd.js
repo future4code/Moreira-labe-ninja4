@@ -214,9 +214,9 @@ export default class SessaoProd extends React.Component {
 
                 <BoxDesc>
                   <img src={Dev} alt="Dev" />
-                  <H1>Relaxa! Aqui você encontra
-                    devs super-poderosos para te ajudar!
-                    <p>Encontre o serviço que precisa, contate a pessoa que o oferece e a gente cuida do resto.</p>
+                  <H1>Relaxa! No DevLivery você encontra
+                    devs super-poderosos para te ajudar
+                    <p>Encontre o serviço que precisa, contate a pessoa que o oferece e a gente cuida do resto</p>
                     
                   </H1>
                 </BoxDesc>

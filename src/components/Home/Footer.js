@@ -27,6 +27,15 @@ const FirstSection = styled.section`
     display: flex;
     justify-content: space-around;
     width: 100%;
+    @media screen and (max-width: 1100px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 `
 const SecondSection = styled.section`
     display: flex;
