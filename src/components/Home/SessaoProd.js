@@ -3,9 +3,10 @@ import styled from "styled-components";
 import Axios from "axios";
 import { CardProd } from "./CardProd";
 import { baseURL, headersAPI } from "../../services/urls";
-import Carrinho from "./Carrinho";
+import Carrinho from "./carrinho/Carrinho";
 import Dev from '../../assets/dev.png'
 import { Search } from "./search-field/Search";
+import { CartButton } from "./carrinho/CartButton";
 
 const SessionContainer = styled.div`
   display: flex;
@@ -39,16 +40,11 @@ const Select = styled.select`
   margin: 10px;
 `
 const H1 = styled.h1`
-  //text-align: center;
-  //border: 1px solid black;
-  //background-color: lightcoral;
   width: 600px;
   line-height: 60px;
   letter-spacing: 3px;
 `
-const H2 = styled.h2`
-  text-align: center;
-`
+
 const BoxDesc = styled.div`
   margin: 10px 0px;
   display: flex;
@@ -69,6 +65,7 @@ export default class SessaoProd extends React.Component {
       valorMaximo: "",
       buscar: '',
       order: "title",
+      showCart: false
     }
 
     getJobs = () => {
@@ -88,7 +85,8 @@ export default class SessaoProd extends React.Component {
       const alreadyIn = this.state.cart.some((job) => jobId === job.id)
       const newCart = [...this.state.cart, addJob]
 
-      if(!alreadyIn) this.setState({cart: newCart}) 
+      if(!alreadyIn) this.setState({cart: newCart})
+      else alert('Esse serviço já está no carrinho')
     }
 
     removeCarrinho = (ev) => {
@@ -121,6 +119,10 @@ export default class SessaoProd extends React.Component {
       this.setState({
         order: e.target.value
     })}
+
+    cartButton = () => {
+      this.setState({showCart: !this.state.showCart})
+    }
     
     render() {
       
@@ -162,6 +164,13 @@ export default class SessaoProd extends React.Component {
           value={job.id}/>
         })
       }
+
+      let showCart
+
+      if (this.state.showCart === true) {
+        showCart = <Carrinho remove={this.removeCarrinho} cart={this.state.cart} showCart={this.cartButton}/>
+      } else  showCart = <CartButton cart={this.state.cart} showCart={this.cartButton}/>
+
       return (
         <SessionContainer>
 
@@ -173,6 +182,7 @@ export default class SessaoProd extends React.Component {
 
                 <Search onChangebuscar={this.onChangebuscar} buscar={this.state.buscar}/>
                 <Box>
+                  <p>Filtrar:</p>
                     <Input type="text" placeholder="Valor mínimo" onChange={this.onChangeMinimo} value={this.state.valorMinimo}/>
                     <Input type="text" placeholder="Valor máximo" onChange={this.onChangeMaximo} value={this.state.valorMaximo}/>
                     <Select name="order" onChange={this.onChangeOrder}>
@@ -180,10 +190,13 @@ export default class SessaoProd extends React.Component {
                         <option value="price">Valor</option>
                         <option value="dueDate">Prazo</option>
                     </Select>
+
+                    {showCart}
+
                 </Box>
 
 
-            <Carrinho remove={this.removeCarrinho} cart={this.state.cart}/>
+
 
             <CardsContainer>
 

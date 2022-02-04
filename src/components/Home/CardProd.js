@@ -13,7 +13,7 @@ const CardContainer = styled.div`
     width: 250px;
     margin: 10px;
     :hover {
-        box-shadow: 0 4px 4px lightgray;
+        box-shadow: 0 4px 8px lightgray;
     }
     .description{
         font-size: 0.8em;
@@ -43,11 +43,12 @@ const CardContainer = styled.div`
         background-color: #4C2263;
         border: none;
         border-radius: 10px;
-        margin: 5px;
+        margin: 0 0 10px 0;
         font-size: 0.8em;
         transition: 0.3s ease;
         color: white;
         font-weight: 600;
+        cursor: pointer;
         :hover{
             background-color: #69268A;
         }

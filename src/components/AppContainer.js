@@ -3,6 +3,12 @@ import SessaoProd from './Home/SessaoProd'
 import PagCadastro from './Register/PagCadastro'
 import Header from './Home/Header'
 import Footer from './Home/Footer'
+import styled from 'styled-components'
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`
 
 export class AppContainer extends Component {
 
@@ -33,11 +39,11 @@ export class AppContainer extends Component {
     else if (this.state.section === "register") displaySection = <PagCadastro/>
 
     return (
-      <div>
+      <Container>
         <Header buttonText={this.state.button} clicks={this.changeSection} />
         {displaySection}
         <Footer/>
-      </div>
+      </Container>
     )
   }
 }

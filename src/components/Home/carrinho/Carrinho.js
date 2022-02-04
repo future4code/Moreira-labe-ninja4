@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { AiOutlineShoppingCart, AiOutlineCloseCircle } from "react-icons/ai"
 
 const Produto = styled.div`
     display: flex;
@@ -7,8 +8,33 @@ const Produto = styled.div`
     align-items: center;
     border: 1px solid lightgray;
     margin: 2px;
+    min-width: 30vw;
     p{
         margin: 6px;
+    }
+`
+
+const CartContainer = styled.div`
+    margin: 15px;
+    border: 2px solid #69268A;
+    border-radius: 10px;
+    padding: 15px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 25%;
+    .title{
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        p{
+            margin: 10px;
+        }
+        .close{
+            margin: -3px;
+            cursor: pointer;
+        }
     }
 `
 
@@ -35,12 +61,22 @@ class Carrinho extends React.Component{
                 onClick={this.props.remove}> Remover</button>
             </Produto>
             })}
-        return(
-            <div>
-                <p>Carrinho</p>
+
+
+            return(
+            <CartContainer>
+
+                <div className="title">
+                    <AiOutlineShoppingCart/>
+                    <p>Carrinho</p>
+                   <AiOutlineCloseCircle className="close" onClick={this.props.showCart}/>
+                </div>
+
                 {produtosCarrinhos}
+
                 <p>Valor Total: R${this.valorTotal()}</p>
-            </div>
+
+            </CartContainer>
         )
     }
 }
