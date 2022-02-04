@@ -36,7 +36,10 @@ const SectionTwo = styled.section`
     }
 `    
 const Box = styled.article`
-    width: 400px;
+    width: 25%;
+    @media screen and (max-width: 800px) {
+        width: 80%;
+    }
 `
 
 

@@ -93,15 +93,6 @@ const BoxDesc = styled.div`
 `
 export default class SessaoProd extends React.Component {
 
-  componentDidMount(){
-    this.getJobs()
-    this.getCart()
-  }
-
-  componentDidUpdate(){
-    localStorage.setItem('cart', JSON.stringify(this.state.cart))
-  }
-
     state = {
       jobs: [],
       cart: [],
@@ -112,6 +103,20 @@ export default class SessaoProd extends React.Component {
       showCart: false
     }
 
+    componentDidMount(){
+      this.getJobs()
+      // this.getCart()
+    }
+  
+    // componentDidUpdate(){
+    //   localStorage.setItem('cart', JSON.stringify(this.state.cart))
+    // }
+  
+    // getCart = () => {
+    //   this.setState({
+    //     cart: JSON.parse(localStorage.getItem("cart"))})
+    // }
+
     getJobs = () => {
         Axios.get(baseURL+"jobs", headersAPI)
         .then((res) => {this.setState({
@@ -119,11 +124,6 @@ export default class SessaoProd extends React.Component {
         })
       })
         .catch((err) => console.log(err.response))
-    }
-
-    getCart = () => {
-      this.setState({
-        cart: JSON.parse(localStorage.getItem("cart"))})
     }
 
     addToCart = (e) => {
