@@ -4,6 +4,7 @@ import PagCadastro from './Register/PagCadastro'
 import Header from './Home/Header'
 import Footer from './Home/Footer'
 import styled from 'styled-components'
+import Sessao3 from './Home/Sessao3'
 
 const Container = styled.div`
   display: flex;
@@ -42,6 +43,7 @@ export class AppContainer extends Component {
       <Container>
         <Header buttonText={this.state.button} clicks={this.changeSection} />
         {displaySection}
+        <Sessao3 />
         <Footer/>
       </Container>
     )
