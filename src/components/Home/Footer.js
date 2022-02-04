@@ -1,7 +1,7 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import styled from "styled-components";
-import FormaDePagamento from '../../assets/payment.jpg'
+import FormaDePagamento from '../../assets/paymethods.png'
 
 const fig = {
     fontSize: "30px",
@@ -9,26 +9,33 @@ const fig = {
 }
 
 const FooterDiv = styled.div`
-    background-color: #971a1a;
+    background-color: #E6581D;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    /* height: 120px; */
     font-size: 20px;
+    color: white;
 `
 const A = styled.a`
-    //text-decoration: none;
     color: #111;
 `
 const PSegundo = styled.div`
-   //background-color: lightblue;
    width: 300px;
 `
 const FirstSection = styled.section`
     display: flex;
     justify-content: space-around;
     width: 100%;
+    @media screen and (max-width: 1100px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 `
 const SecondSection = styled.section`
     display: flex;
@@ -84,7 +91,7 @@ class Footer extends React.Component{
                             <div>
                                 <p>Central de ajuda</p>
                                 <p>Atendimento para empresas</p>
-                                <p>Vendas com Ninjas</p>
+                                <p>Vendas com Devs</p>
                             </div>
                         </div>
                     </section>
@@ -108,7 +115,7 @@ class Footer extends React.Component{
                 <Hr/>
                 <SecondSection>
                     <Coments>
-                        <p>© 2022 Ninjas, inc ·
+                        <p>© 2022 DevLivery inc. ·
                             <A href="#">Privacidade</A> 
                             · <A href="#">Termos</A> 
                             · <A href="#">Mapa do Site</A> 
@@ -118,7 +125,7 @@ class Footer extends React.Component{
                     <Socials>
                         <PSegundo>
                             <TitleSocial>
-                                <H4>Acompanhe os ninjas</H4>
+                                <H4>Acompanhe o DevLivery</H4>
                             </TitleSocial>
                             <ImageSocial>
                                 <FaFacebook style={fig}/>

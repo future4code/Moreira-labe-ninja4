@@ -3,13 +3,18 @@ import SessaoProd from './Home/SessaoProd'
 import PagCadastro from './Register/PagCadastro'
 import Header from './Home/Header'
 import Footer from './Home/Footer'
-import { IconName } from "react-icons/fa";
+import styled from 'styled-components'
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`
 
 export class AppContainer extends Component {
 
   state = {
     section: "home",
-    button: "Seja um ninja!"
+    button: "Anuncie seus poderes"
   }
 
   changeSection = () => {
@@ -21,7 +26,7 @@ export class AppContainer extends Component {
     }else if(this.state.section === "register"){
       this.setState({
         section: "home",
-        button: "Seja um ninja!"
+        button: "Anuncie seus poderes"
       })
     }
   }
@@ -34,12 +39,11 @@ export class AppContainer extends Component {
     else if (this.state.section === "register") displaySection = <PagCadastro/>
 
     return (
-      <div>
-        <Header clicks={this.changeSection} />
-        {/* <button onClick={this.changeSection}>{this.state.button}</button> */}
+      <Container>
+        <Header buttonText={this.state.button} clicks={this.changeSection} />
         {displaySection}
         <Footer/>
-      </div>
+      </Container>
     )
   }
 }
