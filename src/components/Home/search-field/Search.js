@@ -19,6 +19,10 @@ const SearchContainer = styled.div`
         border: 0;
         font-size: 1em;
         height: 85%;
+        :focus {
+            box-shadow: 0 0 0 0;
+            outline: 0;
+}
     }
     .icon{
         margin-left: 10px;

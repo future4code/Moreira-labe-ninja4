@@ -95,6 +95,11 @@ export default class SessaoProd extends React.Component {
 
   componentDidMount(){
     this.getJobs()
+    this.getCart()
+  }
+
+  componentDidUpdate(){
+    localStorage.setItem('cart', JSON.stringify(this.state.cart))
   }
 
     state = {
@@ -114,6 +119,11 @@ export default class SessaoProd extends React.Component {
         })
       })
         .catch((err) => console.log(err.response))
+    }
+
+    getCart = () => {
+      this.setState({
+        cart: JSON.parse(localStorage.getItem("cart"))})
     }
 
     addToCart = (e) => {
