@@ -66,7 +66,6 @@ const CardHeader = styled.div`
     .icon{
         margin: 15px;
         scale: 3;
-        box-sizing: border-box;
     }
     .title{
         margin: 10px 5px 3px 10px;

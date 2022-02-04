@@ -25,7 +25,7 @@ const ButtonContainer = styled.div`
 `
 
 export function CartButton(props) {
-    return <ButtonContainer onClick={props.showCart}>
+    return <ButtonContainer onClick={props.showCart} onMouseEnter={props.showCart}>
         <MdShoppingCart/>
         <p>Carrinho [{props.cart.length}]</p>
         </ButtonContainer>

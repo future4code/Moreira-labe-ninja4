@@ -12,9 +12,18 @@ const Produto = styled.div`
     p{
         margin: 6px;
     }
+    button{
+        background-color: lightcoral;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        margin: 6px;
+    }
 `
 
 const CartContainer = styled.div`
+    background-color: white;
+    /* position: absolute; */
     margin: 15px;
     border: 2px solid #69268A;
     border-radius: 10px;
@@ -66,7 +75,7 @@ class Carrinho extends React.Component{
 
 
             return(
-            <CartContainer>
+            <CartContainer  onMouseLeave={this.props.showCart} >
 
                 <div className="title">
                     <AiOutlineShoppingCart/>
