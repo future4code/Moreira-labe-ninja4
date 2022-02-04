@@ -1,4 +1,16 @@
 import React from "react";
+import styled from "styled-components";
+
+const Produto = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid lightgray;
+    margin: 2px;
+    p{
+        margin: 6px;
+    }
+`
 
 class Carrinho extends React.Component{
     
@@ -15,19 +27,19 @@ class Carrinho extends React.Component{
 
         if (this.props.cart !== []){
             produtosCarrinhos = this.props.cart.map((job) => {
-                return <div key={job.id} value={job.id}>
+                return <Produto key={job.id} value={job.id}>
                 <p>{job.title}</p>
-                <p>R$ {job.price}</p>
+                <p>R${job.price}</p>
                 <button 
                 value={job.id}
                 onClick={this.props.remove}> Remover</button>
-            </div>
+            </Produto>
             })}
         return(
             <div>
                 <p>Carrinho</p>
                 {produtosCarrinhos}
-                <p>Valor Total: {this.valorTotal()}</p>
+                <p>Valor Total: R${this.valorTotal()}</p>
             </div>
         )
     }

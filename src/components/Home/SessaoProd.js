@@ -4,7 +4,8 @@ import Axios from "axios";
 import { CardProd } from "./CardProd";
 import { baseURL, headersAPI } from "../../services/urls";
 import Carrinho from "./Carrinho";
-import Ninja from '../../assets/ninja.jpg'
+import Dev from '../../assets/dev.png'
+import { Search } from "./search-field/Search";
 
 const SessionContainer = styled.div`
   display: flex;
@@ -18,26 +19,21 @@ const CardsContainer = styled.div`
 `
 
 const Box = styled.div`
-  border: 1px solid black;
-  width: 90vw;
-  height: 100px;
-  border-radius: 50px;
+  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
 `
 const Input = styled.input`
-  border: 1px solid black;
-  width: 300px;
+  border: 1px solid lightgray;
   height: 30px;
   border-radius: 5px;
   margin: 10px;
   
 `
 const Select = styled.select`
-  border: 1px solid black;
-  width: 300px;
+  border: 1px solid lightgray;
   height: 30px;
   border-radius: 5px;
   margin: 10px;
@@ -54,10 +50,10 @@ const H2 = styled.h2`
   text-align: center;
 `
 const BoxDesc = styled.div`
-  //background-color: lightblue;
-  margin: 50px 0px;
+  margin: 10px 0px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   text-align: center;
 `
 export default class SessaoProd extends React.Component {
@@ -87,12 +83,12 @@ export default class SessaoProd extends React.Component {
     }
 
     addToCart = (e) => {
-
       const jobId = e.target.value
-      const addJob = this.state.jobs.find((job) => jobId === job.id);
+      const addJob = this.state.jobs.find((job) => jobId === job.id)
+      const alreadyIn = this.state.cart.some((job) => jobId === job.id)
       const newCart = [...this.state.cart, addJob]
 
-      this.setState({cart: newCart}) 
+      if(!alreadyIn) this.setState({cart: newCart}) 
     }
 
     removeCarrinho = (ev) => {
@@ -168,24 +164,25 @@ export default class SessaoProd extends React.Component {
       }
       return (
         <SessionContainer>
+
                 <BoxDesc>
-                  <img src={Ninja} alt="Ninja" />
-                  <H1>Fique tranquilo! Aqui você encontra os melhores
-                    profissionais, para o seu problema!</H1>
+                  <img src={Dev} alt="Ninja" />
+                  <H1>Relaxa! Aqui você encontra
+                    devs super-poderosos para te ajudar!</H1>
                 </BoxDesc>
-                <div>
-                  <H2>Quero um super ninja!</H2>
-                </div>
+
+                <Search onChangebuscar={this.onChangebuscar} buscar={this.state.buscar}/>
                 <Box>
                     <Input type="text" placeholder="Valor mínimo" onChange={this.onChangeMinimo} value={this.state.valorMinimo}/>
                     <Input type="text" placeholder="Valor máximo" onChange={this.onChangeMaximo} value={this.state.valorMaximo}/>
-                    <Input type="text" placeholder="Buscar" onChange={this.onChangebuscar} value={this.state.buscar}/>
                     <Select name="order" onChange={this.onChangeOrder}>
                         <option value="title">Titulo</option>
                         <option value="price">Valor</option>
                         <option value="dueDate">Prazo</option>
                     </Select>
                 </Box>
+
+
             <Carrinho remove={this.removeCarrinho} cart={this.state.cart}/>
 
             <CardsContainer>

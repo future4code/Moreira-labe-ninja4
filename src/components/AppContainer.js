@@ -8,7 +8,7 @@ export class AppContainer extends Component {
 
   state = {
     section: "home",
-    button: "Seja um ninja!"
+    button: "Anuncie seus poderes"
   }
 
   changeSection = () => {
@@ -20,7 +20,7 @@ export class AppContainer extends Component {
     }else if(this.state.section === "register"){
       this.setState({
         section: "home",
-        button: "Seja um ninja!"
+        button: "Anuncie seus poderes"
       })
     }
   }

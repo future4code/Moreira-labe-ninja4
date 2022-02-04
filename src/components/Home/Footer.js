@@ -1,7 +1,7 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import styled from "styled-components";
-import FormaDePagamento from '../../assets/payment.jpg'
+import FormaDePagamento from '../../assets/paymethods.png'
 
 const fig = {
     fontSize: "30px",
@@ -9,20 +9,18 @@ const fig = {
 }
 
 const FooterDiv = styled.div`
-    background-color: #971a1a;
+    background-color: #E6581D;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    /* height: 120px; */
     font-size: 20px;
+    color: white;
 `
 const A = styled.a`
-    //text-decoration: none;
     color: #111;
 `
 const PSegundo = styled.div`
-   //background-color: lightblue;
    width: 300px;
 `
 const FirstSection = styled.section`
