@@ -17,6 +17,16 @@ const SessionContainer = styled.div`
 const CardsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  @media screen and (max-width: 1100px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media screen and (max-width: 800px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  @media screen and (max-width: 600px) {
+       display: flex;
+       flex-direction: column;
+    }
 `
 
 const Box = styled.div`
@@ -25,6 +35,12 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+    @media screen and (max-width: 1100px) {
+       width: 50%;
+    }
+    @media screen and (max-width: 600px) {
+      flex-wrap: wrap;
+    }
 `
 const Input = styled.input`
   border: 1px solid lightgray;
@@ -40,17 +56,40 @@ const Select = styled.select`
   margin: 10px;
 `
 const H1 = styled.h1`
-  width: 600px;
-  line-height: 60px;
-  letter-spacing: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (max-width: 800px) {
+      margin-top: -15px;
+      font-weight: normal;
+      font-size: 1em;
+  }
 `
 
 const BoxDesc = styled.div`
   margin: 10px 0px;
+  max-width: 70vw;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   text-align: center;
+  img{
+    max-width: 500px;
+  }
+  p{
+    width: 80%;
+    font-size: 0.6em;
+    font-weight: bold;
+    color: gray;
+  }
+  @media screen and (max-width: 1100px) {
+        flex-direction: column;
+    }
+  @media screen and (max-width: 800px) {
+        img{
+          max-width: 300px;
+        }
+      }
 `
 export default class SessaoProd extends React.Component {
 
@@ -73,9 +112,7 @@ export default class SessaoProd extends React.Component {
         .then((res) => {this.setState({
           jobs: res.data.jobs
         })
-        
       })
-
         .catch((err) => console.log(err.response))
     }
 
@@ -130,7 +167,7 @@ export default class SessaoProd extends React.Component {
 
       if (this.state.jobs !== []){
         allJobs = this.state.jobs
-        .filter((job) => {
+          .filter((job) => {
           return job.title.toLowerCase().includes(this.state.buscar.toLowerCase())
           })
           .filter((job) => {
@@ -149,6 +186,7 @@ export default class SessaoProd extends React.Component {
 
               case "dueDate":
                 return new Date(a.dueDate).getTime() < new Date(b.dueDate).getTime()
+
               default:
                 return a.price - b.price
             }})
@@ -175,13 +213,18 @@ export default class SessaoProd extends React.Component {
         <SessionContainer>
 
                 <BoxDesc>
-                  <img src={Dev} alt="Ninja" />
+                  <img src={Dev} alt="Dev" />
                   <H1>Relaxa! Aqui você encontra
-                    devs super-poderosos para te ajudar!</H1>
+                    devs super-poderosos para te ajudar!
+                    <p>Encontre o serviço que precisa, contate a pessoa que o oferece e a gente cuida do resto.</p>
+                    
+                  </H1>
                 </BoxDesc>
 
                 <Search onChangebuscar={this.onChangebuscar} buscar={this.state.buscar}/>
+
                 <Box>
+
                   <p>Filtrar:</p>
                     <Input type="text" placeholder="Valor mínimo" onChange={this.onChangeMinimo} value={this.state.valorMinimo}/>
                     <Input type="text" placeholder="Valor máximo" onChange={this.onChangeMaximo} value={this.state.valorMaximo}/>
@@ -194,9 +237,6 @@ export default class SessaoProd extends React.Component {
                     {showCart}
 
                 </Box>
-
-
-
 
             <CardsContainer>
 

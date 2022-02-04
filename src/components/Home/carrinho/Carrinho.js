@@ -23,11 +23,13 @@ const CartContainer = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin-left: 25%;
+    margin-left: 20%;
     .title{
         font-weight: bold;
         display: flex;
         align-items: center;
+        width: 100%;
+        justify-content: space-between;
         p{
             margin: 10px;
         }

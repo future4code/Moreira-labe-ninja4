@@ -19,6 +19,7 @@ const H1 = styled.h1`
     margin: 0 15px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 `
 const Button = styled.button`
     width: fit-content;
@@ -37,6 +38,9 @@ const Button = styled.button`
     }
     margin: 0 15px;
     color: white;
+    @media screen and (max-width: 600px) {
+       font-size: 0.6em;
+    }
 `
 
 class Header extends React.Component{
@@ -45,7 +49,7 @@ class Header extends React.Component{
             <Content>
 
                 <div>
-                    <H1><FaLaptopCode style={fig}/> DevLivery</H1>
+                    <H1 onClick={this.props.clicks}><FaLaptopCode style={fig}/> DevLivery</H1>
                 </div>
                 <div>
                     <Button onClick={this.props.clicks}>{this.props.buttonText}</Button>
