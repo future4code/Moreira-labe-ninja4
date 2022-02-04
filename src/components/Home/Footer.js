@@ -21,7 +21,11 @@ const A = styled.a`
     color: #111;
 `
 const PSegundo = styled.div`
-   width: 300px;
+      @media screen and (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 `
 const FirstSection = styled.section`
     display: flex;
@@ -46,10 +50,10 @@ const H4 = styled.h4`
     font-size: 30px;
 `
 const Img = styled.img`
-    width: 400px;
+    width: 300px;
 `
 const Hr = styled.hr`
-    width: 500px;
+    width: 80%;
 `
 const Coments = styled.section`
     display: flex;
@@ -64,7 +68,8 @@ const Socials = styled.section`
 const ImageSocial = styled.section`
     text-align: center;
 `
-const TitleSocial = styled.section`
+const TitleSocial = styled.p`
+    margin: 0;
     text-align: center;
 `
 class Footer extends React.Component{
