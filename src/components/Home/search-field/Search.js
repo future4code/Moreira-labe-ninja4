@@ -35,7 +35,7 @@ export function Search(props) {
         <BiSearch className="icon"/>
         <input 
         type="text" 
-        placeholder="Encontre um ninja" 
+        placeholder="Encontre devs" 
         onChange={props.onChangebuscar} 
         value={props.buscar}/>
 

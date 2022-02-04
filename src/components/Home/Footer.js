@@ -82,7 +82,7 @@ class Footer extends React.Component{
                             <div>
                                 <p>Central de ajuda</p>
                                 <p>Atendimento para empresas</p>
-                                <p>Vendas com Ninjas</p>
+                                <p>Vendas com Devs</p>
                             </div>
                         </div>
                     </section>
@@ -106,7 +106,7 @@ class Footer extends React.Component{
                 <Hr/>
                 <SecondSection>
                     <Coments>
-                        <p>© 2022 Ninjas, inc ·
+                        <p>© 2022 DevLivery inc. ·
                             <A href="#">Privacidade</A> 
                             · <A href="#">Termos</A> 
                             · <A href="#">Mapa do Site</A> 
@@ -116,7 +116,7 @@ class Footer extends React.Component{
                     <Socials>
                         <PSegundo>
                             <TitleSocial>
-                                <H4>Acompanhe os ninjas</H4>
+                                <H4>Acompanhe o DevLivery</H4>
                             </TitleSocial>
                             <ImageSocial>
                                 <FaFacebook style={fig}/>
