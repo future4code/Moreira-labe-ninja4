@@ -1,68 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1>Projeto DevLivery</h1>
 
-## Available Scripts
+</hr>
 
-In the project directory, you can run:
+<h3>Link do projeto: [https://devlivery.surge.sh]</h3>
 
-### `npm start`
+<h3>Desenvolvedores que participaram do projeto</h3>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<p>Barbara Zau - GitHub: [https://github.com/BarbaraZau]</p>
+<p>Lép Rigotto - GitHub: [https://github.com/larrygotto]</p>
+<p>Arthur Kelvim - GitHub: [https://github.com/artkelv]</p>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<h3>Tecnologias usadas</h3>
 
-### `npm test`
+<p>React - [https://pt-br.reactjs.org/]</p>
+<p>Figma - [https://www.figma.com/?fuid=]</p>
+<p>Trello - [https://trello.com/pt-BR]</p>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h3>Bibliotecas usadas</h3>
 
-### `npm run build`
+<p>React-Icons - [https://react-icons.github.io/react-icons/]</p>
+<p>Styled-Components [https://styled-components.com/]</p>
+<p>Axios - [https://axios-http.com/ptbr/docs/intro]</p>
+<p>Labeninjas - [https://documenter.getpostman.com/view/9133542/TzXukJkY]</p>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h3>LAYOUT DAS PAGINAS</h3>
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+<p>Foi decidido que iriamos criar 2(duas) páginas, uma Home e outra de cadastro dos serviços. Onde na Home, teria os produtos, um carrinho, sessão de pesquisa e filtragem dos produtos. E na página de cadastro, um formulário simples com informações dos serviços/produtos.</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<h3>PALETA DE CORES</h3>
 
-### `npm run eject`
+<h4>Cores Principais</h4>
+<p>Laranja, o laranja traz alegria, sentimento amigável e confiança.</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<h4>Cores Principais</h4>
+<p>Roxo, o roxo traz criatividade, imaginação e sabedoria.</p>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<h3>REQUISITOS</h3>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<p>Dividindo a criação dos componentes entre os menbros da equipe. Usando a ferramenta "Trello".</p>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<h3>CONSTRUINDO WIREFRAME: [https://www.figma.com/proto/ARzmdf1iOYFEgd7XHLaACq/Untitled?node-id=2%3A5&scaling=scale-down&page-id=0%3A1]</h3>
 
-## Learn More
+<h3>Abaixo você pode conferir algumas imagens do nosso projeto:</h3>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Cdastro](https://user-images.githubusercontent.com/85260996/152608985-31d786c9-89ac-4e62-9339-4308fe5b0215.PNG)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Home](https://user-images.githubusercontent.com/85260996/152608997-ea54f914-8e65-42cc-b1bf-b49b0df75d91.PNG)
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
